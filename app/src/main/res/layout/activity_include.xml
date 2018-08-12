@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="listener"
+            type="databingdingbyjava.myapplication.listener.OnChoiceClick"/>
+
+        <variable
+            name="user"
+            type="databingdingbyjava.myapplication.customBinding.CustomUser"/>
+
+        <variable
+            name="okText"
+            type="String"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/et_input_layout"
+            layout="@layout/input"/>
+
+        <include layout="@layout/user_name"
+            bind:user="@{user}"/>
+
+        <include
+            layout="@layout/click_listener"
+            bind:listener="@{listener}"
+            bind:okText="@{okText}"/>
+
+
+    </LinearLayout>
+
+</layout>

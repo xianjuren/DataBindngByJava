@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <plurals name="b">
+        <item quantity="zero">zero bananas</item>
+        <item quantity="one">one banana</item>
+        <item quantity="two">two bananas</item>
+        <item quantity="few">few bananas</item>
+        <item quantity="many">many bananas</item>
+        <item quantity="other">other bananas</item>
+    </plurals>
+
+    <plurals name="o">
+        <item quantity="one">Have an orange</item>
+        <item quantity="other">Have %d oranges</item>
+    </plurals>
+
+    <string name="nameFormat">Full Name: %1$s:%2$s</string>
+    <string name="nameFormatWithAge">Hello %1$s %2$s, %3$d ages</string>
+
+    <string name="red">red</string>
+    <string name="white">white</string>
+
+    <string name="firstName">Liang</string>
+    <string name="lastName">Fei</string>
+    <string name="age">20岁</string>
+</resources>

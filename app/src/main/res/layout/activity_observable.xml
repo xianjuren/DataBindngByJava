@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.databinding.ObservableList"/>
+
+        <import type="android.databinding.ObservableMap"/>
+
+        <variable
+            name="fileUser"
+            type="databingdingbyjava.myapplication.observable.ObservableFileUser"/>
+
+        <variable
+            name="user"
+            type="databingdingbyjava.myapplication.observable.ObservableUser"/>
+
+        <variable
+            name="listUser"
+            type="ObservableList&lt;Object>"/>
+
+        <variable
+            name="mapUser"
+            type="ObservableMap&lt;String,Object>"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="extends"
+            android:text="@{@string/nameFormat(user.firstName,user.lastName)}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="file"
+            android:text="@{@string/nameFormatWithAge(fileUser.firstName,fileUser.lastName,fileUser.age)}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="list"
+            android:text="@{@string/nameFormatWithAge(listUser[0],listUser[1],listUser[2])}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="map"
+            android:text="@{@string/nameFormatWithAge(mapUser[`firstName`],mapUser[`lastName`],mapUser[`age`])}"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="初始化"
+                android:onClick="initValue"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:hint="重新赋值"
+                android:onClick="resetValue"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

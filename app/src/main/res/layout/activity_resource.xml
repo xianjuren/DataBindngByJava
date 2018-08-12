@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="large"
+            type="boolean"/>
+
+        <variable
+            name="firstName"
+            type="String"/>
+
+        <variable
+            name="lastName"
+            type="String"/>
+
+        <variable
+            name="bCount"
+            type="int"/>
+
+        <variable
+            name="oCount"
+            type="int"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@{large? @dimen/largePadding : @dimen/smallPadding}"
+            android:text="世界你好"/>
+
+        <!--格式化字符串和-->
+        <TextView
+            android:text="@{@string/nameFormat(firstName,lastName)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!--plurals写复数形式字符串-->
+        <TextView
+            android:text="@{@plurals/b(bCount)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@{@plurals/o(oCount,oCount)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</layout>

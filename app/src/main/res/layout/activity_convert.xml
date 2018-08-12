@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isError"
+            type="android.databinding.ObservableBoolean"/>
+
+        <variable
+            name="height"
+            type="int"/>
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@{isError.get()? @color/red:@color/white}"
+            app:layout_height="@{height}"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="点击"
+            android:onClick="choiceToggle"
+            android:text="@{isError.get() ?@string/red:@string/white}"/>
+    </LinearLayout>
+
+</layout>

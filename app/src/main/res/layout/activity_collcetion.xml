@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="java.util.Map"/>
+
+        <import type="java.util.List"/>
+
+        <import type="android.util.SparseArray"/>
+        <!--&lt;表示<>-->
+        <variable
+            name="list"
+            type="List&lt;String>"/>
+
+        <variable
+            name="map"
+            type="Map&lt;String,String>"/>
+
+        <variable
+            name="spare"
+            type="SparseArray&lt;String>"/>
+
+        <variable
+            name="index"
+            type="int"/>
+
+        <variable
+            name="key"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@{list[index]}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:text="@{map[key]}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+
+        <TextView
+            android:text="@{spare[index]}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+        <View
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+        <TextView
+           android:text='@{map["firstName"]}'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:text="@{map[`firstName`]}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+        <!--&quot;表示双引号-->
+        <TextView
+            android:text="@{map[&quot;firstName&quot;]}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+</layout>
